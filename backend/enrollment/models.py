@@ -24,6 +24,7 @@ class Subscriber(models.Model):
         ('PSEG', 'PSE&G'),
         ('JCPL', 'Jersey Central Power & Light'),
         ('ACE', 'Atlantic City Electric'),
+        ('ROCKLAND', 'Rockland Electric Co.')
     ]
     
     ASSISTANCE_PROGRAM_CHOICES = [
