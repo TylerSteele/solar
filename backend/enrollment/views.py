@@ -71,9 +71,19 @@ def get_utility_by_zip(request, zip_code):
     try:
         utility_info = UtilityZipCode.objects.get(zip_code=zip_code)
         
+        utility_mapping = {
+            'PSE&G': 'PSEG',
+            'Jersey Central Power & Light': 'JCPL',
+            'Atlantic City Electric': 'ACE',
+            'Rockland Electric Co.': 'ROCKLAND',
+        }
+        
+        utility_choice = utility_mapping.get(utility_info.electric_utility, utility_info.electric_utility)
+        
         return Response({
             'found': True,
-            'utility': utility_info.electric_utility,
+            'utility': utility_choice, 
+            'utility_display': utility_info.electric_utility, 
             'city': utility_info.city,
             'zip_code': utility_info.zip_code
         })
