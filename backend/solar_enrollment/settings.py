@@ -28,6 +28,7 @@ DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 
 ALLOWED_HOSTS = [
+    "solar-cm0k.onrender.com",
     "https://solar-cm0k.onrender.com"
 ]
 
