@@ -36,6 +36,14 @@ class Subscriber(models.Model):
     # Personal Information
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
+
+    # Contact Information
+    email = models.EmailField(max_length=254, blank=True)
+    phone_number = models.CharField(
+        max_length=15,
+        blank=True,
+        validators=[RegexValidator(r'^\+?1?\d{9,15}$', 'Enter a valid phone number')]
+    )
     
     # Address Information
     address = models.CharField(max_length=200)

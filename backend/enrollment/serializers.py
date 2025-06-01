@@ -21,7 +21,7 @@ class SubscriberSerializer(serializers.ModelSerializer):
     class Meta:
         model = Subscriber
         fields = [
-            'id', 'first_name', 'last_name', 'address', 'city', 'state', 
+            'id', 'first_name', 'last_name','email', 'phone_number', 'address', 'city', 'state', 
             'zip_code', 'utility', 'utility_account_number', 'assistance_program',
             'address_validated', 'formatted_address', 'created_at'
         ]
