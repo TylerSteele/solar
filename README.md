@@ -35,3 +35,16 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the site.
 
+## TODO
+
+- Make the frontend more beautiful and reflect the brand
+- Add validation (react-hook-form)
+- Improve typing (tRPC, remove anys in updateData function)
+- Allow backwards navigation to change prior pages
+- Allow user to return mid flow (account creation? come-back-later link? local-storage)
+- Add messaging / knock out scenarios for unsupported zip codes / state
+- Auto-fill address as the user types
+- Validate address automatically and offer replacing invalid address with suggestion
+- Add at-rest encryption for PII fields
+- Send confirmation email on completion (maybe require email confirmation during flow?)
+- Update the copy to better explain why they should enroll
