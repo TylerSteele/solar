@@ -5,6 +5,9 @@ import {
   useAddressValidation,
   useUtilityLookup,
 } from "@/lib/hooks/use-enrollment-api";
+import { Button } from "@/components/Button";
+import { Input } from "@/components/Input";
+import { Select } from "@/components/Select";
 
 interface AddressInfoStepProps {
   data: {
@@ -93,53 +96,42 @@ export function AddressInfo({
       <h2 className="text-xl font-bold mb-6">Step 2: Address Information</h2>
 
       <div className="space-y-4">
-        <div>
-          <label className="block text-sm font-medium mb-1">
-            Street Address *
-          </label>
-          <input
-            type="text"
-            value={data.address}
-            onChange={(e) => updateData({ address: e.target.value })}
-            className="w-full border border-gray-300 rounded px-3 py-2"
-            placeholder="123 Main Street"
-          />
-        </div>
+        <Input
+          label="Street Address"
+          required
+          value={data.address}
+          onChange={(e) => updateData({ address: e.target.value })}
+          placeholder="123 Main Street"
+        />
 
         <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-medium mb-1">City *</label>
-            <input
-              type="text"
-              value={data.city}
-              onChange={(e) => updateData({ city: e.target.value })}
-              className="w-full border border-gray-300 rounded px-3 py-2"
-              placeholder="Newark"
-            />
-          </div>
+          <Input
+            label="City"
+            required
+            value={data.city}
+            onChange={(e) => updateData({ city: e.target.value })}
+            placeholder="Newark"
+          />
 
-          <div>
-            <label className="block text-sm font-medium mb-1">State *</label>
-            <select
-              value={data.state}
-              onChange={(e) => updateData({ state: e.target.value })}
-              className="w-full border border-gray-300 rounded px-3 py-2"
-            >
-              <option value="NJ">New Jersey</option>
-            </select>
-          </div>
+          <Select
+            label="State"
+            required
+            value={data.state}
+            onChange={(e) => updateData({ state: e.target.value })}
+          >
+            <option value="NJ">New Jersey</option>
+          </Select>
         </div>
 
         <div>
           <label className="block text-sm font-medium mb-1">ZIP Code *</label>
           <div className="flex gap-2">
-            <input
-              type="text"
+            <Input
               value={data.zip_code}
               onChange={(e) => updateData({ zip_code: e.target.value })}
-              className="flex-1 border border-gray-300 rounded px-3 py-2"
               placeholder="07102"
               maxLength={5}
+              className="flex-1"
             />
             {lookingUp && (
               <span className="text-sm text-gray-500 py-2">
@@ -149,49 +141,45 @@ export function AddressInfo({
           </div>
         </div>
 
-        <div>
-          <label className="block text-sm font-medium mb-1">
-            Electric Utility *
-          </label>
-          <input
-            type="text"
-            value={
-              data.utility === "PSEG"
-                ? "PSE&G"
-                : data.utility === "JCPL"
-                ? "Jersey Central Power & Light"
-                : data.utility === "ACE"
-                ? "Atlantic City Electric"
-                : data.utility === "ROCKLAND"
-                ? "Rockland Electric Co."
-                : data.utility || "Enter ZIP code to auto-detect utility"
-            }
-            readOnly
-            className="w-full border border-gray-300 rounded px-3 py-2 bg-gray-50"
-            placeholder="Enter ZIP code to auto-detect utility"
-          />
-          {utilityFound && (
-            <p className="text-sm text-green-600 mt-1">
-              ✓ Utility found for your ZIP code
-            </p>
-          )}
-          {data.zip_code.length === 5 && !utilityFound && !lookingUp && (
-            <p className="text-sm text-red-600 mt-1">
-              No utility information available for this ZIP code
-            </p>
-          )}
-        </div>
+        <Input
+          label="Electric Utility"
+          required
+          value={
+            data.utility === "PSEG"
+              ? "PSE&G"
+              : data.utility === "JCPL"
+              ? "Jersey Central Power & Light"
+              : data.utility === "ACE"
+              ? "Atlantic City Electric"
+              : data.utility === "ROCKLAND"
+              ? "Rockland Electric Co."
+              : data.utility || "Enter ZIP code to auto-detect utility"
+          }
+          readOnly
+          helperText={
+            utilityFound
+              ? "✓ Utility found for your ZIP code"
+              : data.zip_code.length === 5 && !lookingUp
+              ? "No utility information available for this ZIP code"
+              : undefined
+          }
+          error={
+            data.zip_code.length === 5 && !utilityFound && !lookingUp
+              ? "No utility information available for this ZIP code"
+              : undefined
+          }
+        />
 
         <div className="pt-4">
-          <button
+          <Button
             onClick={handleAddressValidation}
             disabled={
               validating || !data.address || !data.city || !data.zip_code
             }
-            className="bg-green-500 text-white px-4 py-2 rounded disabled:opacity-50"
+            variant="success"
           >
             {validating ? "Validating..." : "Validate Address"}
-          </button>
+          </Button>
           {addressValidated && (
             <span className="ml-2 text-green-600">✓ Address validated</span>
           )}
@@ -199,20 +187,13 @@ export function AddressInfo({
       </div>
 
       <div className="mt-8 flex justify-between">
-        <button
-          onClick={onPrev}
-          className="bg-gray-500 text-white px-6 py-2 rounded"
-        >
+        <Button onClick={onPrev} variant="secondary">
           Previous
-        </button>
+        </Button>
 
-        <button
-          onClick={handleNext}
-          disabled={!isValid}
-          className="bg-blue-500 text-white px-6 py-2 rounded disabled:opacity-50 disabled:cursor-not-allowed"
-        >
+        <Button onClick={handleNext} disabled={!isValid} variant="primary">
           Next
-        </button>
+        </Button>
       </div>
     </div>
   );

@@ -11,6 +11,7 @@ import ProgressIndicator from "./ProgressIndicator";
 import { PersonalInfo } from "./steps/1PersonalInfo";
 import { AddressInfo } from "./steps/2AddressInfo";
 import { UtilityDetails } from "./steps/3UtilityDetails";
+import { Button } from "../Button";
 
 interface FormData {
   // Personal Info
@@ -105,12 +106,9 @@ export function EnrollmentWizard() {
             Thank you for enrolling in the Solar Landscape program. We'll be in
             touch with next steps.
           </p>
-          <button
-            onClick={resetForm}
-            className="bg-blue-500 text-white px-6 py-2 rounded"
-          >
+          <Button onClick={resetForm} variant="primary">
             Submit Another Enrollment
-          </button>
+          </Button>
         </div>
       </div>
     );

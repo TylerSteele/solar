@@ -1,5 +1,8 @@
 "use client";
 
+import { Button } from "@/components/Button";
+import { Input } from "@/components/Input";
+
 interface PersonalInfoProps {
   data: {
     first_name: string;
@@ -23,37 +26,27 @@ export function PersonalInfo({ data, updateData, onNext }: PersonalInfoProps) {
       <h2 className="text-xl font-bold mb-6">Step 1: Personal Information</h2>
 
       <div className="space-y-4">
-        <div>
-          <label className="block text-sm font-medium mb-1">First Name *</label>
-          <input
-            type="text"
-            value={data.first_name}
-            onChange={(e) => updateData({ first_name: e.target.value })}
-            className="w-full border border-gray-300 rounded px-3 py-2"
-            placeholder="Enter your first name"
-          />
-        </div>
+        <Input
+          label="First Name"
+          required
+          value={data.first_name}
+          onChange={(e) => updateData({ first_name: e.target.value })}
+          placeholder="Enter your first name"
+        />
 
-        <div>
-          <label className="block text-sm font-medium mb-1">Last Name *</label>
-          <input
-            type="text"
-            value={data.last_name}
-            onChange={(e) => updateData({ last_name: e.target.value })}
-            className="w-full border border-gray-300 rounded px-3 py-2"
-            placeholder="Enter your last name"
-          />
-        </div>
+        <Input
+          label="Last Name"
+          required
+          value={data.last_name}
+          onChange={(e) => updateData({ last_name: e.target.value })}
+          placeholder="Enter your last name"
+        />
       </div>
 
       <div className="mt-8 flex justify-end">
-        <button
-          onClick={handleNext}
-          disabled={!isValid}
-          className="bg-blue-500 text-white px-6 py-2 rounded disabled:opacity-50 disabled:cursor-not-allowed"
-        >
+        <Button onClick={handleNext} disabled={!isValid} variant="primary">
           Next
-        </button>
+        </Button>
       </div>
     </div>
   );
