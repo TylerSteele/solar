@@ -28,7 +28,7 @@ DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 
 ALLOWED_HOSTS = [
-    "solar-enrollment.onrender.com"
+    "https://solar-cm0k.onrender.com"
 ]
 
 
@@ -138,6 +138,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
+    ""
     "http://localhost:3000",
     "http://127.0.0.1:3000",
 ]
