@@ -10,6 +10,7 @@ interface PersonalInfoProps {
     email: string;
     phone?: string;
   };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   updateData: (newData: any) => void;
   onNext: () => void;
 }

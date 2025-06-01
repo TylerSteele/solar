@@ -44,6 +44,7 @@ const initialFormData: FormData = {
   utility: "",
   utility_account_number: "",
   assistance_program: "",
+  email: "",
 };
 
 export function EnrollmentWizard() {
@@ -107,8 +108,8 @@ export function EnrollmentWizard() {
             Enrollment Successful!
           </h2>
           <p className="mb-6">
-            Thank you for enrolling in the Solar Landscape program. We'll be in
-            touch with next steps.
+            Thank you for enrolling in the Solar Landscape program. We&apos;ll
+            be in touch with next steps.
           </p>
           <Button onClick={resetForm} variant="primary">
             Submit Another Enrollment

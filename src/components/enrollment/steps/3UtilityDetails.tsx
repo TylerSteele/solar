@@ -11,6 +11,7 @@ interface UtilityDetailsStepProps {
     utility_account_number: string;
     assistance_program: AssistanceProgramType;
   };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   updateData: (newData: any) => void;
   onPrev: () => void;
   onSubmit: () => void;

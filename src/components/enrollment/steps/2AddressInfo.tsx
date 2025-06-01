@@ -17,6 +17,7 @@ interface AddressInfoStepProps {
     zip_code: string;
     utility: string;
   };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   updateData: (newData: any) => void;
   onNext: () => void;
   onPrev: () => void;
