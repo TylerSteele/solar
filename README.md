@@ -1,5 +1,8 @@
 # Solar Community Enrollment 
 
+![image](https://github.com/user-attachments/assets/2a753ddb-2117-42bb-9b07-698b96c9c4cf)
+
+
 To view this app, you can either visit the [live page](https://solar-42q4-cdx14cju3-tyler-steeles-projects.vercel.app/) or install it locally.
 
 ## Getting Started
