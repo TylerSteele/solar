@@ -7,6 +7,7 @@ import {
   AssistanceProgramType,
 } from "@/types/enrollment";
 import { useSubscriberEnrollment } from "@/lib/hooks/use-enrollment-api";
+import ProgressIndicator from "./ProgressIndicator";
 import { PersonalInfo } from "./steps/1PersonalInfo";
 import { AddressInfo } from "./steps/2AddressInfo";
 import { UtilityDetails } from "./steps/3UtilityDetails";
@@ -117,6 +118,13 @@ export function EnrollmentWizard() {
 
   return (
     <div className="max-w-2xl mx-auto p-6">
+      {/* Progress indicator */}
+      <ProgressIndicator
+        currentStep={currentStep}
+        steps={["Personal Info", "Address", "Utility Details"]}
+      />
+
+      {/* Step content */}
       <div className="mb-8">
         {currentStep === 1 && (
           <PersonalInfo
