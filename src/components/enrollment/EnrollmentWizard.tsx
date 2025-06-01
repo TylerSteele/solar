@@ -18,6 +18,10 @@ interface FormData {
   first_name: string;
   last_name: string;
 
+  // Contact Info
+  email: string;
+  phone?: string;
+
   // Address Info
   address: string;
   city: string;

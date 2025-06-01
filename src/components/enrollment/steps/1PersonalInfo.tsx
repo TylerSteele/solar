@@ -7,6 +7,8 @@ interface PersonalInfoProps {
   data: {
     first_name: string;
     last_name: string;
+    email: string;
+    phone?: string;
   };
   updateData: (newData: any) => void;
   onNext: () => void;
@@ -40,6 +42,23 @@ export function PersonalInfo({ data, updateData, onNext }: PersonalInfoProps) {
           value={data.last_name}
           onChange={(e) => updateData({ last_name: e.target.value })}
           placeholder="Enter your last name"
+        />
+
+        <Input
+          label="Email"
+          type="email"
+          required
+          value={data.email || ""}
+          onChange={(e) => updateData({ email: e.target.value })}
+          placeholder="Enter your email address"
+        />
+
+        <Input
+          label="Phone Number (optional)"
+          type="tel"
+          value={data.phone || ""}
+          onChange={(e) => updateData({ phone: e.target.value })}
+          placeholder="Enter your phone number (optional)"
         />
       </div>
 
