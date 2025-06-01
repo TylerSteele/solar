@@ -1,0 +1,22 @@
+[
+  {"zip":"07002","city":"Bayonne","electric_utility":"PSE&G" },
+  {"zip":"07030","city":"Hoboken","electric_utility":"PSE&G" },
+  {"zip":"07102","city":"Newark","electric_utility":"PSE&G" },
+  {"zip":"07302","city":"Jersey City","electric_utility":"PSE&G" },
+  {"zip":"08103","city":"Camden","electric_utility":"PSE&G" },
+  {"zip":"08540","city":"Princeton","electric_utility":"PSE&G" },
+  {"zip":"08618","city":"Trenton","electric_utility":"PSE&G" },
+  {"zip":"07701","city":"Red Bank","electric_utility":"Jersey Central Power & Light" },
+  {"zip":"07712","city":"Asbury Park","electric_utility":"Jersey Central Power & Light" },
+  {"zip":"07828","city":"Budd Lake","electric_utility":"Jersey Central Power & Light" },
+  {"zip":"07860","city":"Newton","electric_utility":"Jersey Central Power & Light" },
+  {"zip":"07960","city":"Morristown","electric_utility":"Jersey Central Power & Light" },
+  {"zip":"08527","city":"Jackson Township","electric_utility":"Jersey Central Power & Light" },
+  {"zip":"08753","city":"Toms River","electric_utility":"Jersey Central Power & Light" },
+  {"zip":"08037","city":"Hammonton","electric_utility":"Atlantic City Electric" },
+  {"zip":"08012","city":"Turnersville","electric_utility":"Atlantic City Electric" },
+  {"zip":"08210","city":"Cape May Court House","electric_utility":"Atlantic City Electric" },
+  {"zip":"08234","city":"Egg Harbor Township","electric_utility":"Atlantic City Electric" },
+  {"zip":"08332","city":"Millville","electric_utility":"Atlantic City Electric" },
+  {"zip":"07456","city":"Ringwood","electric_utility":"Rockland Electric Co." }
+]
