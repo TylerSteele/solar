@@ -142,6 +142,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS settings
 CORS_ALLOWED_ORIGINS = [
+    "https://solar-three-sepia.vercel.app/",
+    "solar-three-sepia.vercel.app/",
     "https://solar-42q4-cdx14cju3-tyler-steeles-projects.vercel.app",
     "solar-42q4-cdx14cju3-tyler-steeles-projects.vercel.app"
     "http://localhost:3000",
